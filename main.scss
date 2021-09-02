@@ -1,0 +1,771 @@
+/*-------------------------------Start variables and all------------------------------------*/
+
+@import url("https://fonts.googleapis.com/css2?family=Anton&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=WindSong&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Kaisei+Opti:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;1,300&display=swap");
+$bg1-color: #f09;
+$bg2-color: #3023ae;
+$bg3-color: #18e09fe6;
+$bg4-color: #18b2e0;
+$leftbtn-color: #e836f6;
+$border-color: rgb(177,
+43,
+170);
+$font1: "Anton",
+sans-serif;
+$font2: "WindSong",
+cursive;
+$font3: "Kaisei Opti",
+serif;
+$font-ubantu: "Ubuntu",
+sans-serif;
+$font5: "Roboto",
+sans-serif;
+@mixin flexcenter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/*-------------------------------END variables and all------------------------------------*/
+
+* {
+    margin: 0;
+    padding: 0;
+    // box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 62.5%;
+    scroll-padding-top: 70px;
+}
+
+body {
+    background-image: linear-gradient(103deg, $bg4-color 0%, $leftbtn-color 100%);
+    background-repeat: no-repeat;
+}
+
+
+/* White background on phone navigation*/
+
+#phone_nav {
+    display: none;
+}
+
+
+/*-------------------------------HOME page Starts ------------------------------------*/
+
+#home {
+    width: 100%;
+    height: 100vh;
+    // z-index: -5;
+    // Navigation bar
+    nav {
+        font-family: $font1;
+        display: flex;
+        max-width: 80%;
+        margin: auto;
+        justify-content: space-evenly;
+        background-image: linear-gradient( 90deg, $bg4-color, $bg1-color, $bg1-color);
+        background-size: 0% 3px;
+        background-repeat: no-repeat;
+        background-position: left bottom;
+        transition: background-size 500ms ease;
+        position: fixed;
+        top: 0%;
+        left: 0%;
+        right: 0%;
+        z-index: 4;
+    }
+    nav:hover {
+        background-size: 100% 3px;
+    }
+    // Title PORTFOLIO.io
+    h3 {
+        margin: 1rem 0.5rem;
+        padding: 2rem;
+        font-size: 3.5rem;
+        text-align: center;
+        cursor: pointer;
+    }
+    .removespace {
+        margin-top: 0rem 0rem;
+        padding-top: 0rem;
+    }
+    // Naviagtion link list parent
+    ul {
+        margin: 0.5rem;
+        display: flex;
+    }
+    // Naviagtion link list
+    li {
+        @include flexcenter();
+        list-style: none;
+    }
+    // Naviagtion link
+    li a {
+        margin: 0.5rem;
+        padding: 3rem 2rem;
+        font-size: 2rem;
+        color: #000000;
+        text-decoration: none;
+    }
+    // Naviagtion link list hover
+    .navlink:hover {
+        background-color: white;
+    }
+    // change color of titile
+    #title {
+        color: #000000;
+        -webkit-background-clip: text;
+        background-clip: text;
+    }
+    .removespace {
+        margin-top: 0;
+        padding-top: 0;
+    }
+    .removespace:hover {
+        color: #ffffff;
+    }
+    // contant of home page
+    .home_content {
+        display: flex;
+        height: 80vh;
+        position: relative;
+        top: 20vh;
+        .head {
+            @include flexcenter();
+            width: 50%;
+            height: inherit;
+        }
+        #head1 {
+            width: 50%;
+            .home_text_parent {
+                width: 80%;
+                height: 70%;
+                padding-top: 3%;
+                margin: 3% 0 0 10%;
+                .home_text_child {
+                    h2 {
+                        font-size: 4rem;
+                        font-weight: 700;
+                    }
+                    .dynamic-text {
+                        margin: 1% 0 1% 5%;
+                        display: inline-block;
+                        width: 100%;
+                        /* Left side dynamic text p tag*/
+                        p {
+                            font-size: 6rem;
+                            font-weight: 900;
+                            display: inline-block;
+                            border-right: 2px solid rgb(0, 0, 0);
+                            animation-name: offon;
+                            animation-duration: 400ms;
+                            animation-iteration-count: infinite;
+                            line-height: 70px;
+                        }
+                        #changetext {
+                            border: none;
+                        }
+                        /* 1) Animation for border blinking */
+                        @keyframes offon {
+                            0% {
+                                border-color: transparent;
+                            }
+                            50% {
+                                border-color: rgb(0, 0, 0);
+                            }
+                            100% {
+                                border-color: transparent;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        #head2 {
+            align-items: flex-start;
+            .frame {
+                width: 35rem;
+                height: 35rem;
+                img {
+                    border-radius: 41% 59% 55% 45% / 63% 53% 47% 37%;
+                    background: -webkit-linear-gradient(62deg, #2d6a8e, blue);
+                    width: inherit;
+                    height: inherit;
+                }
+            }
+        }
+    }
+}
+
+
+/*-------------------------------Hire me Resume Button Starts-------------------------------*/
+
+.btn {
+    text-align: center;
+    width: 25%;
+    padding: 1.5rem 3rem;
+    background: var(--leftbtn-color);
+    border: none;
+    font-size: 2.2rem;
+    font-weight: 700;
+    border-radius: 3rem;
+    box-shadow: 10px 10px 8px rgba(0, 0, 0, 0.308);
+    cursor: grab;
+}
+
+.btn:hover {
+    transform: scale(1.1);
+}
+
+.btn a {
+    text-decoration: none;
+    color: black;
+}
+
+
+/*-------------------------------Hire me & Resume button link Ends-------------------------------*/
+
+
+/*-------------------------------HOME page ENDs ------------------------------------*/
+
+
+/*-------------------------------ABOUT page Starts ------------------------------------*/
+
+#about {
+    width: 100%;
+    // height: 100vh;
+    background-image: linear-gradient(30deg, $leftbtn-color 1%, $bg4-color 100%);
+    // background-color: rgba(0, 20, 255, 0.5);
+    background-repeat: no-repeat;
+    //heading of about section
+    #abouthead {
+        padding-top: 4rem;
+    }
+    // text section parent of about part
+    .abouthead {
+        width: 90%;
+        margin: auto;
+        display: flex;
+        padding-bottom: 10vh;
+        #abouttext {
+            width: 60%;
+            margin: 0 0 0 0;
+            // heading of text
+            h2 {
+                font-size: 3rem;
+                font-family: $font3;
+                border-bottom: 2px solid red;
+                // display: inline;
+                margin: 20px 0 10px 0;
+            }
+            p,
+            h1 {
+                font-family: "Kaisei Opti", serif;
+                display: inline;
+                font-size: 2rem;
+                font-weight: 700;
+            }
+            // h1(highlited) text of about section
+            h1 {
+                font-size: 2.8rem;
+                cursor: pointer;
+                background-image: linear-gradient( 90deg, $bg4-color, $bg1-color, $bg1-color);
+                background-size: 0% 3px;
+                background-repeat: no-repeat;
+                background-position: left bottom;
+                transition: background-size 500ms ease;
+            }
+            //ON hover h1(highlited) text of about section
+            h1:hover {
+                background-size: 100% 3%;
+            }
+            // third text of abouttext section first <p>
+             :nth-child(3) {
+                margin: 0 0 0 40px;
+            }
+        }
+        // Resume button
+        .btn {
+            margin: 3rem auto;
+        }
+        // photo frame of about section
+        #frame2 {
+            margin: auto;
+            background-image: linear-gradient(50deg, #18b2e0 0%, #e836f6 100%);
+        }
+    }
+}
+
+// Heading of Every section
+.heading {
+    font-size: 6rem;
+    font-family: $font3;
+}
+
+
+/*-------------------------------ABOUT page ENDs ------------------------------------*/
+
+
+/*-------------------------------SERVICE page Starts ------------------------------------*/
+
+#service {
+    width: 100%;
+    padding-bottom: 10vh;
+    // background: $bg2-color;
+    .serviceparent {
+        width: 90%;
+        display: flex;
+        margin: auto;
+        flex-direction: row;
+        // padding-bottom: 2vh;
+        #servicebox1 {
+            width: 70%;
+            // margin: 20px;
+            box-sizing: border-box;
+            // border: 2px solid black;
+            font-family: Arial, Helvetica, sans-serif;
+            padding: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            .services {
+                // height: 10vh;
+                width: 50%;
+                margin-bottom: 20px;
+                // border: 2px solid rgb(47, 0, 255);
+                // border-left: 2px solid black;
+                // background: rgb(231, 4, 4);
+                padding: 20px;
+                box-sizing: border-box;
+                h2 {
+                    font-size: 3.2rem;
+                }
+                p {
+                    margin: 10px 0 20px 0;
+                    font-size: 16px;
+                    font-family: $font5;
+                    font-weight: 300;
+                }
+                p::after {
+                    content: "I work on SQL and MySQL database";
+                }
+            }
+            .line::before {
+                content: "";
+                width: 1%;
+                height: 100%;
+                // background: #000;
+                border: 2px solid red;
+                // position: absolute;
+                float: left;
+                margin-right: 20px;
+                border-radius: 5px;
+                transition: all 500ms;
+            }
+            .services:hover::before {
+                background-color: #000000;
+            }
+        }
+        #servicebox2 {
+            box-sizing: border-box;
+            // margin: 20px 0 20px 0;
+            padding: 20px;
+            // background: rgb(0, 248, 83);
+            width: 25%;
+            font-size: 2.1rem;
+            display: grid;
+            font-family: $font5;
+            font-weight: 500; // border: 2px solid red;
+             :first-child {
+                margin-top: 20px;
+            }
+            p {
+                // border: 2px solid #000000;
+                line-height: 2.5rem;
+            }
+            p:before {
+                content: "\201C";
+                font-size: 2.8rem;
+            }
+            p:after {
+                content: "\201D";
+                font-size: 2.8rem;
+            }
+        }
+    }
+    #go {
+        font-size: 30px;
+        // margin: auto;
+        text-align: center;
+        font-family: $font1;
+        i {
+            animation: 2s updown infinite;
+            color: #000;
+        }
+        @keyframes updown {
+            0% {
+                transform: translate(0, 0);
+            }
+            50% {
+                transform: translate(0, 20px);
+            }
+            100% {
+                transform: translate(0, 0);
+            }
+        }
+    }
+    // #projectgo {
+    //     width: 100px;
+    //     height: 100px;
+    //     border-radius: 50%;
+    //     border: 2px solid red;
+    //     text-align: center;
+    //     vertical-align: middle;
+    //     margin: auto;
+    //     @include flexcenter();
+    //     font-size: 18px;
+    //     font-family: sans-serif;
+    //     font-weight: 700;
+    //     transition: 5s transform;
+    //     i:hover {
+    //         color: #18b2e0;
+    //     }
+    // }
+    // #projectgo:hover {
+    //     animation: rotate 2s linear infinite;
+    // }
+    // @keyframes rotate {
+    //     0% {
+    //         transform: rotate(0deg);
+    //         font-size: 18px;
+    //     }
+    //     50% {
+    //         font-size: 19px;
+    //     }
+    //     70% {
+    //         font-size: 22px;
+    //     }
+    //     100% {
+    //         transform: rotate(360deg);
+    //         font-size: 18px;
+    //     }
+    // }
+    // #projectgo1 {
+    //     width: 5px;
+    //     height: 50px;
+    //     background: red;
+    //     margin: auto;
+    // }
+}
+
+
+/*-------------------------------SERVICE page ENDs ------------------------------------*/
+
+
+/*-------------------------------PROJECT page Starts ------------------------------------*/
+
+#project {
+    width: 100%;
+    height: 100vh;
+    background: $bg4-color;
+}
+
+
+/*-------------------------------PROJECT page ENDs ------------------------------------*/
+
+
+/*-------------------------------CONTACT page Starts ------------------------------------*/
+
+#contact {
+    width: 100%;
+    height: 100vh;
+    background: $bg1-color;
+}
+
+
+/*-------------------------------CONTACT page ENDs ------------------------------------*/
+
+
+/*--------------Media query for max-width of 1600--------------*/
+
+@media screen and (min-width: 1410px) and (max-width: 1600px) {
+    #home #head1 .home_text_parent .home_text_child .dynamic-text p {
+        line-height: 70px;
+        font-size: 6rem;
+    }
+}
+
+
+/*--------------Media query for max-width of 1410--------------*/
+
+@media screen and (min-width: 1200px) and (max-width: 1409px) {
+    html {
+        font-size: 52.5%;
+    }
+    #home {
+        .home_content {
+            top: 17vh;
+        }
+    }
+}
+
+
+/*--------------Media query for max-width of 1199--------------*/
+
+@media screen and (min-width: 900px) and (max-width: 1200px) {
+    html {
+        font-size: 39%;
+    }
+    #home {
+        .home_content {
+            top: 15vh;
+        }
+    }
+    #service {
+        .serviceparent {
+            #servicebox1 {
+                .services {
+                    h2 {
+                        font-size: 5rem;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+/*--------------Media query for max-width of 899--------------*/
+
+@media screen and (max-width: 900px) {
+    html {
+        font-size: 35%;
+    }
+    /*-------------------------------HOME page Starts ------------------------------------*/
+    #home {
+        // Parent Positioning navigation in phone include (title and navigation btn)
+        #displayflex {
+            z-index: 5;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            width: 100%;
+            margin-top: 10px;
+        }
+        // Parent box(Navigation btn)  Navigation btn 3 lines
+        #nav-btn {
+            @include flexcenter();
+            width: 30px;
+            height: 40px;
+            z-index: 1;
+            margin: 5px;
+            right: 30px;
+            top: 10px;
+            flex-direction: column;
+            margin: 0.5rem;
+        }
+        // Navigation btn 3 lines onlick /* JAVASCRIPT*/
+        .activebtn {
+            display: block;
+            .nav-btn {
+                position: absolute;
+                background-color: #000000;
+                transition: transform 500ms;
+                // right: 100px;
+            }
+            #nav-btn2 {
+                transform: rotate(-45deg);
+            }
+            #nav-btn1 {
+                transform: rotate(45deg);
+            }
+            #nav-btn3 {
+                // visibility: hidden;
+                display: none;
+            }
+        }
+        //Navigation btn 3 lines
+        .nav-btn {
+            width: inherit;
+            height: 7px;
+            background: #ffffff;
+            transition: transform 2s;
+        }
+        // Navigation btn line number 2
+        #nav-btn2 {
+            margin: 3px 0;
+        }
+        // White background on phone navigation
+        .phone_nav {
+            display: block;
+            width: 100%;
+            height: 100vh;
+            background: white;
+            position: fixed;
+        }
+        // Navigation link list parent
+        ul {
+            top: 60px;
+            // z-index: 1;
+            flex-direction: column;
+            width: 100%;
+            position: absolute;
+            display: none;
+        }
+        // Navigation link
+        li a {
+            margin: auto;
+            @include flexcenter();
+            font-size: 4.2rem;
+            width: 100%;
+            border-bottom: 2px solid $border-color;
+            animation-name: nav-anim;
+            animation-duration: 1s;
+        }
+        // Navigation link Entry
+        @keyframes nav-anim {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.5);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+        // Navigation link list on hover
+        a:hover {
+            background: linear-gradient(30deg, $leftbtn-color, $bg4-color);
+        }
+        // HOME page content
+        .home_content {
+            top: 13vh;
+            z-index: -1;
+            flex-direction: column;
+            @include flexcenter();
+            #head1 {
+                width: 100%;
+                // margin: 0 auto;
+            }
+            .home_text_parent {
+                margin: auto;
+                width: 100%;
+                text-align: center;
+                margin: 0 !important;
+            }
+            .home_text_child {
+                .btn {
+                    margin: 0 auto;
+                }
+                .dynamic-text p {
+                    // background-color: #000000;
+                    // font-size: 5rem !important;
+                    line-height: 50px;
+                }
+            }
+        }
+    }
+    #about {
+        height: 100vh;
+        .abouthead {
+            // display: block;
+            #abouttext {
+                width: 100%;
+            }
+            #frame2 {
+                display: none;
+            }
+        }
+    }
+    #service {
+        // height: 100vh;
+        .serviceparent {
+            // flex-direction: column;
+            display: block;
+            width: 100%;
+            #servicebox1 {
+                width: 100%;
+                display: block;
+                padding: 0;
+                margin: 0;
+                .services {
+                    width: 100%;
+                    .remove {
+                        display: none;
+                    }
+                    h2 {
+                        font-size: 5rem;
+                    }
+                    p {
+                        font-size: 3.5rem;
+                        margin-bottom: 0;
+                    }
+                    p::after {
+                        content: "";
+                    }
+                }
+            }
+            .line::before {
+                background: #000000;
+                height: 13vh !important;
+            }
+            #servicebox2 {
+                width: 100%;
+                font-size: 4rem;
+                p {
+                    line-height: 5rem;
+                    margin-top: 20px;
+                }
+                p::before {
+                    font-size: 6rem;
+                }
+                p::after {
+                    font-size: 6rem;
+                }
+            }
+        }
+        #go {
+            display: none;
+        }
+    }
+    /*--------------Media query for max-width of 370--------------*/
+    @media screen and (max-width: 370px) {
+        html {
+            font-size: 27%;
+        }
+        #home {
+            #displayflex {
+                #title {
+                    font-size: 5rem;
+                }
+            }
+            .home_content {
+                #head1 {
+                    .home_text_parent {
+                        .home_text_child {
+                            .dynamic-text {
+                                p {
+                                    line-height: 60px;
+                                }
+                            }
+                            .btn {
+                                width: 35%;
+                                font-size: 4rem;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+/*-------------------------------HOME page ENDs ------------------------------------*/
